@@ -11,6 +11,10 @@ hello
 Vishal
 Vishal2
 Vishal 3
-helly SHAH
+<<<<<<< HEAD
+helly SHAH k.
+=======
+helly 1234
+>>>>>>> updated
 ABC
 hey
