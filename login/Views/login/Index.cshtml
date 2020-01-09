@@ -1,0 +1,77 @@
+﻿@model login.Models.login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Autherize","login",FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>                     </td>
+                    <td style="text-decoration:underline">  App Name  </td>
+                </tr>
+
+                <tr>
+                    <td> @Html.LabelFor(model => model.Name)</td>
+                    <td> @Html.EditorFor(model => model.Name)</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> @Html.ValidationMessageFor(model => model.Name)</td>
+                </tr>
+
+                <tr>
+                    <td> @Html.LabelFor(model => model.password)</td>
+                    <td> @Html.EditorFor(model => model.password)</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> @Html.ValidationMessageFor(model => model.password)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.loginerrormsg)</label>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" value="login" />
+                        <input type="reset" name="name" value="clear" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+    </div>
+
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
